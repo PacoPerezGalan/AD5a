@@ -5,6 +5,14 @@ import java.sql.Date;
 public class Pedido {
 	int id;
 	Date fecha;
+	Item item= new Item();
+	
+	public Item getItem() {
+		return item;
+	}
+	public void setItem(Item item) {
+		this.item = item;
+	}	
 	public int getId() {
 		return id;
 	}

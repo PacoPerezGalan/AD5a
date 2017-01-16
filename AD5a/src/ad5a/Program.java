@@ -24,14 +24,17 @@ public class Program {
 		session.save(e);
 			
 		Pedido p=new Pedido();
-		p.setFecha(new Date(System.currentTimeMillis()));		
+		p.setFecha(new Date(System.currentTimeMillis()));
+		p.getItem().setNombre("Tablet");
+		p.getItem().setCantidad(3);
 		session.save(p);
 		
+		/*5a
 		Item i=new Item();
 		i.setNombre("Tablet");
 		i.setCantidad(3);
 		session.save(i);
-		
+		*/
 		session.getTransaction().commit();
 		//
 		
@@ -42,11 +45,12 @@ public class Program {
 		System.out.println("Hem recuperat de Empresa: "+em.getNombre()+" "+em.getCIF()+" "+em.getDireccion()+" "+em.getEmpleados());
 		
 		Pedido pe=session.get(Pedido.class, 1);
-		System.out.println("Hem recuperat de Pedido: "+pe.getFecha());
+		System.out.println("Hem recuperat de Pedido: "+pe.getFecha()+" Item:"+pe.getItem().getNombre()+" "+pe.getItem().getCantidad());
 		
+		/*5a
 		Item it=session.get(Item.class, 1);
 		System.out.println("Hem recuperat de Item: "+it.getNombre()+" "+it.getCantidad());
-		
+		*/
 		session.getTransaction().commit();
 		//
 		session.close();

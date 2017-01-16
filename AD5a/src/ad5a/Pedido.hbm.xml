@@ -11,5 +11,13 @@
         <property name="fecha" type="java.sql.Date">
             <column name="FECHA" />
         </property>
+        <component name="ad5a.Item">
+        	<property name="nombre" type="java.lang.String">
+            	<column name="NOMBRE" />
+        	</property>
+        	<property name="cantidad" type="int">
+            	<column name="CANTIDAD" />
+        	</property>
+        </component>
     </class>
 </hibernate-mapping>
