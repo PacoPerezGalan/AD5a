@@ -23,6 +23,7 @@ public class Item {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-	
+
+
 	
 }

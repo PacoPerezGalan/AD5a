@@ -11,7 +11,8 @@
         <property name="fecha" type="java.sql.Date">
             <column name="FECHA" />
         </property>
-        <component name="ad5a.Item">
+        
+        <component name="Item">
         	<property name="nombre" type="java.lang.String">
             	<column name="NOMBRE" />
         	</property>
@@ -19,5 +20,15 @@
             	<column name="CANTIDAD" />
         	</property>
         </component>
+        
+        <list name="items" table="items_usuario">
+        <key column="ID"/>
+        <list-index column="POSICION">	
+        </list-index>
+        <composite-element class="ad5a.Items">
+        	<property name="nombre" type="java.lang.String" column="NOMBRE"/>
+        	<property name="cantidad" type="int" column="CANTIDAD"/>
+        </composite-element>
+        </list>
     </class>
 </hibernate-mapping>

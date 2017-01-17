@@ -27,6 +27,9 @@ public class Program {
 		p.setFecha(new Date(System.currentTimeMillis()));
 		p.getItem().setNombre("Tablet");
 		p.getItem().setCantidad(3);
+		p.getItems().add(new Items("One Plus 3",5));
+		p.getItems().add(new Items("Samsung Galaxy 7",4));
+		p.getItems().add(new Items("Iphone 7",3));
 		session.save(p);
 		
 		/*5a
@@ -45,8 +48,10 @@ public class Program {
 		System.out.println("Hem recuperat de Empresa: "+em.getNombre()+" "+em.getCIF()+" "+em.getDireccion()+" "+em.getEmpleados());
 		
 		Pedido pe=session.get(Pedido.class, 1);
-		System.out.println("Hem recuperat de Pedido: "+pe.getFecha()+" Item:"+pe.getItem().getNombre()+" "+pe.getItem().getCantidad());
-		
+		System.out.println("Hem recuperat de Pedido: "+pe.getFecha()+" Item(component):"+pe.getItem().getNombre()+" "+pe.getItem().getCantidad());
+		for(Items items : pe.getItems() ){
+			System.out.println("item(collection): "+items.getNombre()+" "+items.getCantidad());
+		}
 		/*5a
 		Item it=session.get(Item.class, 1);
 		System.out.println("Hem recuperat de Item: "+it.getNombre()+" "+it.getCantidad());
