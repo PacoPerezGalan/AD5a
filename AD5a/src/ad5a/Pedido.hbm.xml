@@ -12,7 +12,7 @@
             <column name="FECHA" />
         </property>
         
-        <component name="Item">
+        <component name="item">
         	<property name="nombre" type="java.lang.String">
             	<column name="NOMBRE" />
         	</property>
@@ -21,6 +21,7 @@
         	</property>
         </component>
         
+         
         <list name="items" table="items_usuario">
         <key column="ID"/>
         <list-index column="POSICION">	
@@ -30,5 +31,6 @@
         	<property name="cantidad" type="int" column="CANTIDAD"/>
         </composite-element>
         </list>
+        
     </class>
 </hibernate-mapping>

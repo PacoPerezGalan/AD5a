@@ -5,7 +5,12 @@ public class Items {
 	String nombre;
 	int cantidad;
 	
+	public Items(){
+	
+	}
+	
 	public Items(String nombre,int cantidad){
+
 		this.nombre=nombre;
 		this.cantidad=cantidad;
 	}
